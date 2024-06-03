@@ -1,0 +1,156 @@
+
+
+<div  *ngIf="!loading"  class="container">
+    <div class="row dashBoardSectionOne">
+        <div class="sectionTitle">dashboard</div>
+        <!-- <ng-container *ngFor="let card of dashBoardSectionOne; let i = index"> -->
+            <div class="col-sm-6 col-xl-4">
+                <div class="dashBoardSectionOneCard active" (click)="onClickDashBoardSectionOne()">
+                    <div class="cardLeftPannel">
+                        <div class="title">overall achievement</div>
+                        <div class="body">{{dashboardData?.yourAchievements}}%</div>
+                        <div class="footer">
+                            <span>
+                                <img src="../../assets/images/dashboard/section1_cardFooterIcon.png" width="20" height="12" alt="img">
+                                <span class="text-green">5.5%</span>Up from past week</span>
+                        </div>
+                    </div>
+                    <div class="cardRightPannel">
+                        <img src="../../assets/images/dashboard/section1_card1_Icon.png"  width="60" height="60">
+                    </div>
+                </div>
+            </div>
+        <!-- </ng-container> -->
+    </div>
+
+    <div class="row dashBoardSectionTwo">
+        <div class="sectionTitle">continue watching <span class="seeAll">see all</span></div>
+            <swiper-container class="p-0" initial-slide="0" slides-per-view="3" space-between="10" scrollbar-hide="true" >
+                <swiper-slide class="col-sm-6 col-xl-4 px-2" *ngFor="let card of continueWatchingData; let i = index">
+                    <!-- <div class="col-sm-6 col-xl-4"> -->
+                        <div class="dashBoardSectionTwoCard" [class.active]="i===0">
+                            <div class="icon" [ngStyle]="{backgroundColor: card.data.subjectColorCode}" ><img [src]="card.data.subjectIcon" width="100%" height="100%" [alt]="card.subjectName"></div>
+                            <div class="title">{{card.subjectName}}</div>
+                            <div class="footer">
+                                <div class="leftText">{{card.noOfModule}} {{card.moduleText}}</div>
+                                <div class="rightText">{{card.percentage}} %</div>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{width:card.percentage+'%'}" aria-valuenow="card.percentage" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </swiper-slide>
+            </swiper-container>
+        </div>
+
+    <div class="row dashBoardSectionthird">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="container slideContentWrapper">
+                    <div class="row">
+                        <div class="col-sm-6 px-3">
+                            <div class="sliderContent">
+                                <h2>online course<br><span>for adult & children</span></h2>
+                                <ul>
+                                    <li>Flexible training programs<br>Experienced teachers</li>
+                                    <li>Free incoming lessons</li>
+                                </ul>
+                                <button class="btn btnTwo">join us  now &nbsp;<i class="bi bi-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <img src="../../assets/images/dashboard/slider1.png" alt="slide1">
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="container slideContentWrapper">
+                    <div class="row">
+                        <div class="col-sm-6 px-3">
+                            <div class="sliderContent">
+                                <h2>online course<br><span>for adult & children</span></h2>
+                                <ul>
+                                    <li>Flexible training programs<br>Experienced teachers</li>
+                                    <li>Free incoming lessons</li>
+                                </ul>
+                                <button class="btn btnTwo">join us  now &nbsp;<i class="bi bi-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <img src="../../assets/images/dashboard/slider1.png" alt="slide1">
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="container slideContentWrapper">
+                    <div class="row">
+                        <div class="col-sm-6 px-3">
+                            <div class="sliderContent">
+                                <h2>online course<br><span>for adult & children</span></h2>
+                                <ul>
+                                    <li>Flexible training programs<br>Experienced teachers</li>
+                                    <li>Free incoming lessons</li>
+                                </ul>
+                                <button class="btn btnTwo">join us  now &nbsp;<i class="bi bi-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <img src="../../assets/images/dashboard/slider1.png" alt="slide1">
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>    
+
+    <div class="row dashBoardSectionFour">
+        <div class="sectionTitle">recent watched topics</div>
+        <ng-container *ngFor="let card of recentWatchedTopics; let i = index">
+            <div class="col-sm-12 col-md-6 col-xl-4">
+                <div class="dashBoardSectionFourthCard" [class.active]="i===0">
+                    <div class="cardLeftPannel" [ngStyle]="{'background-image': 'url(' + card.topicIcon + ')'}">
+                        <img  src="../../assets/images/dashboard/recentWatchedTopic-icon.svg" width="100%" height="100%" [alt]="card.chapterDisplayName">
+                    </div>
+                    <div class="cardRightPannel">
+                        <div class="title">{{card.chapterDisplayName}}</div>
+                        <div class="progressModule">
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{width:'50%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="noOfModule">11/22</div>
+                        </div>
+                        <div class="timestamp">
+                            <img src="../../assets/images/dashboard/section4_card_time_icon.png" width="20" height="20" [alt]="card.chapterDisplayName">
+                            {{card.lastActivity}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+
+<div *ngIf="loading" class="text-center">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>

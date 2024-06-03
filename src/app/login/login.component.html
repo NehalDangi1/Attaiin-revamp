@@ -1,0 +1,74 @@
+
+<div class="loginRegContainer">
+    <div class="container">
+        <div class="row ">
+            <div class="d-none d-lg-block col-sm-6">
+                <div class="loginRegWrapperBg">
+                    <img src="../../assets/images/login_registration/loginBanner.svg" width="100%" height="100%" alt="loginBanner">
+                </div>
+            </div>
+            <div class="col">
+                <div class="loginRegWrapper">
+                    <h3>login</h3>
+                    <mat-tab-group class="attaiin-tab-group" animationDuration="0ms">
+                        <mat-tab class="attaiin-tab" label="email">
+                            <form class="form" [formGroup]="loginWithEmail" (ngSubmit)="onSubmit('loginWithEmail')">
+                                <div class="form-group attaiinFormField">
+                                    <label for="ainputEmail" class="form-label">Email</label>
+                                    <div class="input-group">
+                                        <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                        <input type="email" class="form-control" formControlName="email" id="ainputEmail" placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="form-group attaiinFormField">
+                                    <label for="ainputEmail" class="form-label">password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-text"><i class="bi bi-lock"></i></div>
+                                        <input type="email" class="form-control" formControlName="password" id="ainputEmail" placeholder="**********">
+                                    </div>
+                                </div>
+                                <div class="form-group attaiinFormRememberMe">
+                                    <div><mat-checkbox formControlName="loginRememberMe">remember me</mat-checkbox></div>
+                                    <div class="forgotPass" (click)="forgotPassword()">forgot password</div>
+                                </div>
+                                <button  type="submit" class="btn attaiinFormBtn w-100">login in</button>
+                            </form>
+                            <div class="attaiinFormInfo">
+                                <p>login with <span  (click)="loginWithOtp()">OTP</span></p>
+                                <p>new user? <span  (click)="goToRegister()">sign up</span></p>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="phone number">
+                            <form class="form" [formGroup]="loginWithPhoneNumber" (ngSubmit)="onSubmit('loginWithPhoneNumber')">
+                                <div class="attaiinFormField">
+                                    <label for="ainputtel" class="form-label">phone</label>
+                                    <div class="input-group">
+                                        <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                        <input type="text" class="form-control" formControlName="phoneNumber" id="ainputtel" placeholder="phone number">
+                                    </div>
+                                </div>
+                                <div class="attaiinFormField">
+                                    <label for="ainputEmail" class="form-label">password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-text"><i class="bi bi-lock"></i></div>
+                                        <input type="email" class="form-control" formControlName="password" id="ainputEmail" placeholder="**********">
+                                    </div>
+                                </div>
+                                <div class="attaiinFormRememberMe">
+                                    <div><mat-checkbox formControlName="loginRememberMe">remember me</mat-checkbox></div>
+                                    <div class="forgotPass" (click)="forgotPassword()">forgot password</div>
+                                </div>
+                                <button  type="submit" class="btn attaiinFormBtn w-100">login in</button>
+                            </form>
+                            <div class="attaiinFormInfo">
+                                <p>login with <span  (click)="loginWithOtp()">OTP</span></p>
+                                <p>new user? <span  (click)="goToRegister()">sign up</span></p>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

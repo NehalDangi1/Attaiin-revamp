@@ -1,0 +1,63 @@
+@import '../../assets/variables';
+
+.attainCustomMenuIcons{
+    display: flex;
+    align-items: center;
+    // a{
+    //     margin: 0 10px;
+    // }
+    .nav-link{
+        i{
+            &::before{
+                font-size: 20px;
+                color: #a6a6a6;
+                font-weight: 500!important;
+            }
+        }
+        &:focus, &:hover{
+            i{
+                &::before{
+
+                    color: #0055B5;
+                    font-weight: 600 !important;
+                }
+            }
+        }
+
+    }
+}
+
+.attainCustomUserMenu{
+    .userMenuItem{
+        display: flex;
+        align-items: center;
+        .userMenu{
+                font-size: 12px;
+                padding-left: 12px;
+                display: inline-block;
+                @media (max-width: 991.98px) {
+                    display: none;
+                }
+                @media (min-width: 992px) {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: flex-start;
+                }
+
+                & span{
+                    font-family: $font-family-Inter;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #0055B5;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    &:first-child{
+                        font-size: 16px;
+                        line-height: 26px;
+                        color: #131313;
+                        font-weight: 600;
+                    }
+                }
+            }
+    }
+}

@@ -1,0 +1,17 @@
+
+<div class="">
+    <header></header>
+    <div class="container-fluid">
+        <div class="row mt-5 pt-5">
+            <div class="d-none d-xl-block col-xl-2">
+                <side-menu-bar 
+                    class="sideMenuBar position-fixed pt-3"
+                    *ngIf="!router.url.includes('login')">
+                </side-menu-bar>
+            </div>
+            <div class="col-md-10">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

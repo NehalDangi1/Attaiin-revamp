@@ -1,0 +1,102 @@
+<div class="loginRegContainer">
+    <div class="container">
+        <div class="row" *ngIf="!isAccountCreated">
+            <div class="d-none d-lg-block col-sm-6">
+                <div class="loginRegWrapperBg">
+                    <img src="../../assets/images/login_registration/loginBanner.svg" width="100%" height="100%" alt="loginBanner">
+                </div>
+            </div>
+            <div class="col">
+                <div class="loginRegWrapper">
+                    <h3>register</h3>
+                    <mat-tab-group class="attaiin-tab-group" animationDuration="0ms">
+                        <mat-tab class="attaiin-tab" label="email">
+                            <div class="attaiinFormField">
+                                <label for="ainputEmail" class="form-label">Email</label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                    <input type="email" class="form-control" id="ainputEmail" placeholder="Username">
+                                </div>
+                            </div>
+                            <button  type="button" class="btn attaiinFormBtn w-100" (click)="createAccount()">create account</button>
+                            <div class="attaiinFormInfo">
+                                <p>have an account? <span (click)="goToLogin()">login</span></p>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="phone number">
+                            <div class="attaiinFormField">
+                                <label for="ainputtel" class="form-label">phone</label>
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                    <input type="text" class="form-control" id="ainputtel" placeholder="phone number">
+                                </div>
+                            </div>
+                            <button  type="button" class="btn attaiinFormBtn w-100" (click)="createAccount()">create account</button>
+                            <div class="attaiinFormInfo">
+                                <p>have an account? <span (click)="goToLogin()">login</span></p>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+        </div>
+        <div class="row gx-2" *ngIf="isAccountCreated">
+            <div class="loginRegWrapper">
+                <h3 class="text-center">Please enter your details to register</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6 attaiinFormField">
+                            <label for="ainputfname" class="form-label">first name</label>
+                            <div class="input-group">
+                                <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                <input type="text" class="form-control" id="ainputfname" placeholder="john Doe">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 attaiinFormField">
+                            <label for="ainputlname" class="form-label">last name</label>
+                            <div class="input-group">
+                                <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                <input type="text" class="form-control" id="ainputlname" placeholder="borass">
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6 attaiinFormField">
+                            <label for="ainputEmail" class="form-label">email</label>
+                            <div class="input-group">
+                                <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                <input type="email" class="form-control" id="ainputEmail" placeholder="johodoe@email.com">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 attaiinFormField">
+                            <label for="ainputphone" class="form-label">phone number</label>
+                            <div class="input-group">
+                                <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                <input type="tel" class="form-control" id="ainputphone" placeholder="+011">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 attaiinFormField">
+                            <label for="ainputpassword" class="form-label">password</label>
+                            <div class="input-group">
+                                <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                <input type="password" class="form-control" id="ainputpassword" placeholder="**********">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 attaiinFormField">
+                            <label for="ainputcpassword" class="form-label">confirm password</label>
+                            <div class="input-group">
+                                <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                                <input type="password" class="form-control" id="ainputcpassword" placeholder="**********">
+                            </div>
+                        </div>
+                        <div class="col offset-md-3 text-center">
+                            <div class="attaiinTermsCondition">
+                                <div><mat-checkbox formControlName="termsCondition">I agree to <span>Terms & Condition</span> and <span>Privacy Policy</span></mat-checkbox></div>
+                            </div>
+                        </div>
+                        <button  type="button" class="btn attaiinFormBtn w-100">create account</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
